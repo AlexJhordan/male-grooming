@@ -15,7 +15,7 @@
   }
 
   .title-primary {
-    @apply text-5xl font-extrabold uppercase md:text-7xl;
+    @apply text-4xl font-extrabold uppercase md:text-5xl lg:text-7xl;
   }
   .title-secondary {
     @apply text-3xl font-extrabold uppercase md:text-4xl;
