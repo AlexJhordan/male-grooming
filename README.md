@@ -1,43 +1,27 @@
-# Astro Starter Kit: Minimal
+# Landing Page – Astro + Tailwind
 
-```sh
-bun create astro@latest -- --template minimal
-```
+![Prévia da Landing](./preview.png)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Landing page simples, responsiva e focada no estudo do framework **Astro**.
 
-## 🚀 Project Structure
+Site em produção: **https://male-grooming.netlify.app**
 
-Inside of your Astro project, you'll see the following folders and files:
+## Tecnologias
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- Astro  
+- Tailwind CSS  
+- TypeScript  
+- Bun
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Requisitos
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+- Bun >= 1.x  
+- Node >= 18
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Como executar localmente
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```bash
+git clone <url-do-repo>
+cd <pasta-do-repo>
+bun install
+bun dev
