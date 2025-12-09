@@ -8,12 +8,16 @@ Site hospedado aqui: **https://male-grooming.netlify.app**
 
 > 👋 Este é meu primeiro projeto feito exclusivamente com **Astro**. Já tinha feito outro usando Astro junto com outras tecnologias (React, SSR) e, apesar de ter gostado do resultado com as Islands, quis criar uma página simples usando apenas Astro para entender melhor como o framework funciona na prática, no que para mim, landing page é o seu melhor cenário.
 
+> Adoro a simplicidade que o framework oferece para criar tudo de forma rápida e prática.
+
 ## Tecnologias
 
 - Astro  
 - Tailwind CSS  
 - TypeScript  
 - Bun
+
+> Tailwind porque é vida e Bun porque é rápido
 
 ## Requisitos
 
