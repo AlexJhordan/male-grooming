@@ -1,0 +1,35 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-quicksand: 'Quicksand', sans-serif;
+  --color-background: #f8f5ef;
+  --color-primary: #dec7a6;
+  --color-foreground: #000;
+}
+@layer base {
+  :root {
+    @apply text-foreground font-quicksand scroll-smooth border-black font-normal;
+  }
+  body {
+    @apply bg-background;
+  }
+
+  .title-primary {
+    @apply text-5xl font-extrabold uppercase md:text-7xl;
+  }
+  .title-secondary {
+    @apply text-3xl font-extrabold uppercase md:text-4xl;
+  }
+  .title {
+    @apply text-lg font-extrabold uppercase md:text-xl;
+  }
+  .ui-px {
+    @apply px-4 md:px-8 lg:px-16 2xl:px-32;
+  }
+  .ui-mx {
+    @apply mx-4 md:mx-8 lg:mx-16 2xl:mx-32;
+  }
+  .card {
+    @apply bg-white p-4 shadow-lg/10 lg:p-8;
+  }
+}

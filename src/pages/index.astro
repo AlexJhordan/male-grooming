@@ -1,0 +1,547 @@
+---
+import { Image } from 'astro:assets'
+import Layout from '../layout/base.astro'
+
+import banner from '../assets/banner.png'
+import banner_2 from '../assets/banner_2.png'
+import banner_3 from '../assets/banner_3.png'
+import img from '../assets/img_thumbnail.png'
+import profile from '../assets/profile.jpeg'
+
+import Button from '../components/button.astro'
+import Dialog from '../components/dialog.astro'
+import GoogleIcon from '../components/google-icon.astro'
+import InfoListItem from '../components/info-list-item.astro'
+import Input from '../components/input.astro'
+import Link from '../components/link.astro'
+import ReviewBlock from '../components/review-block.astro'
+import Stars from '../components/stars.astro'
+import Textarea from '../components/textarea.astro'
+---
+
+<Layout>
+  <main class="space-y-16 lg:space-y-32">
+    <Dialog id="dialog">
+      <p class="title">Página de exemplo somente</p>
+      <form method="dialog">
+        <Button class="mx-auto">Entendo</Button>
+      </form>
+    </Dialog>
+    <section
+      class="ui-px relative mb-0 content-center space-y-8 pt-48 pb-32 text-center after:absolute after:inset-0 after:-z-10 after:bg-linear-to-r after:from-black/60 after:to-transparent after:to-60% lg:pt-60 xl:pt-80 2xl:pt-100"
+    >
+      <Image
+        class="absolute inset-0 -z-10 size-full object-cover object-top"
+        src={banner}
+        alt="Hero"
+        width={1920}
+        height={1080}
+      />
+
+      <h1 class="title-primary text-white text-shadow-lg/30">
+        A máxima conveniência para pessoas ocupadas
+      </h1>
+      <p class="title text-white text-shadow-lg/30">
+        Experimente a Conveniência dos Serviços de Barbeiro em Casa
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <Link href="#booking">Agendar um horário</Link>
+        <Link href="#booking" variant="secondary">Agendar Agora</Link>
+      </div>
+    </section>
+    <article>
+      <ul
+        class="ui-mx card -mt-10 flex flex-wrap justify-around gap-4 text-center *:max-w-[250px] *:min-w-[200px] *:basis-3/10"
+      >
+        <InfoListItem title="Endereço">
+          <svg
+            slot="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+              d="M18.364 4.636a9 9 0 0 1 .203 12.519l-.203 .21l-4.243 4.242a3 3 0 0 1 -4.097 .135l-.144 -.135l-4.244 -4.243a9 9 0 0 1 12.728 -12.728zm-6.364 3.364a3 3 0 1 0 0 6a3 3 0 0 0 0 -6z"
+            ></path></svg
+          >
+          <p>Rua Lynden, 3696, Lefroy, Ontário, Canadá</p>
+        </InfoListItem>
+        <InfoListItem title="Telefone">
+          <svg
+            slot="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path fill="none" d="M0 0h24v24H0z"></path><path
+              d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 0 0-1.02.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1A11.36 11.36 0 0 1 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM19 12h2a9 9 0 0 0-9-9v2c3.87 0 7 3.13 7 7zm-4 0h2c0-2.76-2.24-5-5-5v2c1.66 0 3 1.34 3 3z"
+            ></path></svg
+          >
+          <p>11 99999-9999</p>
+          <p>11 99999-9998</p>
+        </InfoListItem>
+        <InfoListItem title="Horários">
+          <svg
+            slot="icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+              d="M17 3.34a10 10 0 1 1 -14.995 8.984l-.005 -.324l.005 -.324a10 10 0 0 1 14.995 -8.336zm-5 2.66a1 1 0 0 0 -.993 .883l-.007 .117v5l.009 .131a1 1 0 0 0 .197 .477l.087 .1l3 3l.094 .082a1 1 0 0 0 1.226 0l.094 -.083l.083 -.094a1 1 0 0 0 0 -1.226l-.083 -.094l-2.707 -2.708v-4.585l-.007 -.117a1 1 0 0 0 -.993 -.883z"
+            ></path></svg
+          >
+          <p>Seg a Sex: 9:00 - 18:00</p>
+          <p>Sábado: 9:00 - 12:00</p>
+        </InfoListItem>
+      </ul>
+    </article>
+    <section class="ui-px flex flex-col gap-4 lg:flex-row">
+      <div class="content-center space-y-4 lg:basis-1/2">
+        <h2 class="title-secondary text-balance">Seu serviço de barbeiro pessoal na sua casa</h2>
+        <p class="text-balance">
+          Nossos serviços são projetados para oferecer o máximo de conforto e qualidade. Com
+          profissionais experientes e equipamentos de última geração, garantimos uma experiência
+          excepcional no conforto do seu lar.
+        </p>
+        <footer class="flex gap-4 *:basis-full">
+          <div class="space-y-1">
+            <p class="title-secondary w-full">
+              99<span class="text-primary">%</span>
+            </p>
+            <p class="title w-1/2">Satisfação do Cliente</p>
+          </div>
+          <div class="space-y-1">
+            <p class="title-secondary">
+              10<span class="text-primary">+</span>
+            </p>
+            <p class="title w-1/2">Anos de Experiência</p>
+          </div>
+        </footer>
+      </div>
+      <Image
+        class="aspect-square w-auto basis-full object-cover shadow-lg/30 lg:basis-1/2"
+        src={img}
+        alt="Barbeiro profissional trabalhando"
+        width={500}
+        height={500}
+      />
+    </section>
+    <section class="space-y-8">
+      <header class="ui-px space-y-2 text-center text-balance">
+        <h2 class="title-secondary">Conheça nossos serviços</h2>
+        <p class="lg:mx-auto lg:w-2/3">
+          Oferecemos uma variedade de serviços profissionais de barbearia para atender todas as suas
+          necessidades. Qualidade e excelência em cada atendimento.
+        </p>
+      </header>
+
+      <ul
+        class="ui-mx card grid gap-4 gap-y-8 md:grid-cols-2 md:gap-8 lg:gap-16 lg:p-16 [&_svg]:size-12 [&_svg]:shrink-0"
+      >
+        <li class="flex items-center gap-4">
+          <div class="w-12 *:size-8!">
+            <svg
+              class="-mb-4"
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              ><path
+                d="M12 14.1179L9.68347 16.4345C9.88726 16.9144 10 17.4423 10 17.9966C2 20.2058 8.20914 21.9966 6 21.9966C3.79086 21.9966 2 20.2058 2 17.9966C2 15.7875 3.79086 13.9966 6 13.9966C6.55427 13.9966 7.08222 14.1094 7.56215 14.3131L9.87868 11.9966L4.21142 6.32936C3.43037 5.54831 3.43037 4.28198 4.21142 3.50093L4.91852 2.79382L12 9.8753L19.0815 2.79382L19.7886 3.50093C20.5696 4.28198 20.5696 5.54831 19.7886 6.32936L14.1213 11.9966L16.4379 14.3131C16.9178 14.1094 17.4457 13.9966 18 13.9966C20.2091 13.9966 22 15.7875 22 17.9966C22 20.2058 20.2091 21.9966 18 21.9966C15.7909 21.9966 14 20.2058 14 17.9966C14 17.4423 14.1127 16.9144 14.3165 16.4345L12 14.1179ZM6 19.9966C7.10457 19.9966 8 19.1012 8 17.9966C8 16.892 7.10457 15.9966 6 15.9966C4.89543 15.9966 4 16.892 4 17.9966C4 19.1012 4.89543 19.9966 6 19.9966ZM18 19.9966C19.1046 19.9966 20 19.1012 20 17.9966C20 16.892 19.1046 15.9966 18 15.9966C16.8954 15.9966 16 16.892 16 17.9966C16 19.1012 16.8954 19.9966 18 19.9966Z"
+              ></path></svg
+            >
+            <svg
+              class="ml-5 -rotate-20"
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+              ><path
+                d="M447.25 113.53c-.697.022-1.397.065-2.125.126C299.132 126.026 155.697 158.49 36.47 223.28c-10.362 5.632-15.204 13.98-16.845 26.345-1.64 12.366.834 28.467 6.72 45.844 11.216 33.12 34.585 70.496 59.374 98.124l17.593-4.72L66.374 251l18.03-4.813 36.94 137.844 21.03-5.655-36.938-137.813 18.032-4.843 36.936 137.81 18.78-5.03-36.905-137.813 18.064-4.843 36.906 137.78 20.28-5.437-36.936-137.78 18.062-4.845 36.906 137.782 21.032-5.656-36.906-137.75 18.03-4.844 36.907 137.75 21.03-5.625-36.905-137.75 18.03-4.845 36.94 137.72 19.53-5.22-36.906-137.72 18.03-4.843 36.907 137.688 22.47-6.03-36.875-137.69 18.063-4.843 36.875 137.688 21-5.625-36.875-137.688L394 163.22l36.875 137.655 20.28-5.438-36.874-137.625 18.033-4.843 36.875 137.624 17.687-4.75c7.676-36.4 9.244-81.307 2.406-116.03-3.586-18.218-9.55-33.498-17.06-43.158-6.574-8.452-13.485-12.827-22.908-13.125-.673-.02-1.365-.02-2.062 0z"
+              ></path></svg
+            >
+          </div>
+          <div class="space-y-2">
+            <h3 class="title">Corte Adulto</h3>
+            <p>
+              Corte de cabelo profissional para homens com técnicas modernas e acabamento impecável.
+            </p>
+            <p class="title">R$ 39</p>
+          </div>
+        </li>
+        <li class="flex items-center gap-4">
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+              d="M447.25 113.53c-.697.022-1.397.065-2.125.126C299.132 126.026 155.697 158.49 36.47 223.28c-10.362 5.632-15.204 13.98-16.845 26.345-1.64 12.366.834 28.467 6.72 45.844 11.216 33.12 34.585 70.496 59.374 98.124l17.593-4.72L66.374 251l18.03-4.813 36.94 137.844 21.03-5.655-36.938-137.813 18.032-4.843 36.936 137.81 18.78-5.03-36.905-137.813 18.064-4.843 36.906 137.78 20.28-5.437-36.936-137.78 18.062-4.845 36.906 137.782 21.032-5.656-36.906-137.75 18.03-4.844 36.907 137.75 21.03-5.625-36.905-137.75 18.03-4.845 36.94 137.72 19.53-5.22-36.906-137.72 18.03-4.843 36.907 137.688 22.47-6.03-36.875-137.69 18.063-4.843 36.875 137.688 21-5.625-36.875-137.688L394 163.22l36.875 137.655 20.28-5.438-36.874-137.625 18.033-4.843 36.875 137.624 17.687-4.75c7.676-36.4 9.244-81.307 2.406-116.03-3.586-18.218-9.55-33.498-17.06-43.158-6.574-8.452-13.485-12.827-22.908-13.125-.673-.02-1.365-.02-2.062 0z"
+            ></path></svg
+          >
+          <div class="space-y-2">
+            <h3 class="title">Corte Infantil</h3>
+            <p>
+              Corte especializado para crianças com ambiente descontraído e técnicas apropriadas.
+            </p>
+            <p class="title">R$ 19</p>
+          </div>
+        </li>
+        <li class="flex items-center gap-4">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8 3v2"></path><path
+              d="M12 3v2"></path><path d="M16 3v2"></path><path d="M9 12v6a3 3 0 0 0 6 0v-6h-6z"
+            ></path><path d="M8 5h8l-1 4h-6z"></path><path d="M12 17v1"></path></svg
+          >
+          <div class="space-y-2">
+            <h3 class="title">Aparar Barba</h3>
+            <p>Modelagem e manutenção da barba com técnicas precisas para um visual bem cuidado.</p>
+            <p class="title">R$ 29</p>
+          </div>
+        </li>
+        <li class="flex items-center gap-4">
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+              d="M200.9 38.05c-1.7 0-2.9.36-3.6.84-9.3 6.84-14.4 20.81-14.2 36.27.1 7.36 1.6 14.85 4 21.67 8.3-5.28 17.1-10.41 26.3-15.38-.2-1.2-.2-2.38-.2-3.51 0-5.38 1.4-10.15 2.6-14.5 1.2-4.34 2.3-8.28 2.7-11.14.4-2.86.1-4.1-.3-4.65-1.6-2.69-6.4-6.61-11.1-8.39-2.4-.89-4.5-1.21-6.2-1.21zm65.5 42.46c-6.4-.12-13.3 1.3-20.5 4.76h-.1C148.5 130.9 97.96 193 70.73 252.9c-27.27 59.8-31.08 117.5-33.39 154.3-2.8 44.6 18.99 63.6 40.84 66.4 21.92 2.7 44.82-10.6 47.32-43.5C133.1 330 162.2 229 291.7 139.7l-.2.1c8.9-6.5 12.3-13.7 13-21.1.6-7.4-1.9-15.4-7.1-22.13-6.4-8.46-16.3-14.89-28.3-15.95-.9-.1-1.8-.13-2.7-.15zm-30 29.09c13.7 0 25 11.3 25 25s-11.3 25-25 25-25-11.3-25-25 11.3-25 25-25zm0 18c-4 0-7 3-7 7s3 7 7 7 7-3 7-7-3-7-7-7zm52.4 36.3c-8.4 6.1-16.3 12.3-23.8 18.5l57.8 57.8 6.3 6.4-11.4 11.3 142.7 142.7c1.7-2.5 3.3-5 4.7-7.5 5.8-10 9.5-20 9.8-28.7.4-8.7-1.9-16.2-9.5-23.7-58.8-58.9-117.7-117.9-176.6-176.8zM305 270.7l-21.2 21.2 145.6 145.6c6.2-6.3 13.3-13.9 20.2-22.2z"
+            ></path></svg
+          >
+          <div class="space-y-2">
+            <h3 class="title">Navalha no Pescoço</h3>
+            <p>Serviço de acabamento com navalha para um visual limpo e bem definido.</p>
+            <p class="title">R$ 39</p>
+          </div>
+        </li>
+        <li class="flex items-center gap-4">
+          <svg
+            version="1.0"
+            xmlns="http://www.w3.org/2000/svg"
+            width="85.333"
+            height="85.333"
+            viewBox="0 0 64 64"
+          >
+            <path
+              d="M37 3.5V7h13V0H37zM33 13c0 2 .5 2.1 10.2 1.8 8.9-.3 10.3-.5 10.6-2.1.3-1.5-.7-1.7-10.2-1.7-10 0-10.6.1-10.6 2m4 8.7c0 2.2-1 3.4-4.8 5.8-8.1 5.1-8.2 5.3-8.2 15.9C24 56.2 23.7 56 43.7 56 63 56 63 56 63 43.6c0-9.6-1-11.5-8.5-16.3-3.5-2.2-4.5-3.4-4.5-5.6 0-2.7-.1-2.7-6.5-2.7S37 19 37 21.7M6.5 49.2c-3.9 3-5.8 8-4.3 11.2 2.9 6.4 12.6 3.5 15.7-4.7 2.7-7.2-4.9-11.6-11.4-6.5m17.5 12V64h39v-5.5H24z"
+            ></path>
+          </svg>
+          <div class="space-y-2">
+            <h3 class="title">Hidratação do Couro Cabeludo</h3>
+            <p>Tratamento especializado para hidratar e revitalizar o couro cabeludo.</p>
+            <p class="title">R$ 10</p>
+          </div>
+        </li>
+        <li class="flex items-center gap-4">
+          <svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+            <path
+              d="M11 19.3c-1.9.9-2.7 2.4-3.3 5.7C5.9 36-.2 134.8.4 144.3 1.7 164.5 7 181 19.3 203c11.9 21.4 28.8 45.1 39.1 54.8 11.2 10.6 26.5 18.6 43.1 22.3 8.6 2 88.4 2 97 0 16.3-3.7 31.6-11.6 42.7-21.9 17.4-16.2 44.9-60.2 52.8-84.3 3.3-10.1 6-26.6 6-36.5-.1-10.6-7.6-115-8.5-116.3-.4-.7-1.8-1.6-3.1-2.1-3.7-1.5-7.1.6-8.8 5.4-.8 2.3-4.4 13.1-8.1 24.1-13.8 41-26.7 65.5-34.6 65.5-1.2 0-6.2-2.7-11.2-6.1C201.9 92 178.1 84.7 150 84.7S98.1 92 74.3 107.9c-5 3.4-10 6.1-11 6.1-3 0-5.9-2.6-10.6-9.8-8.6-13-16.5-31.7-27.1-63.9-3.1-9.5-5.9-17.9-6.2-18.6-.3-.8-1.6-1.9-3-2.6-3-1.3-2.4-1.3-5.4.2M183 121c14.9 4.1 22.8 13.5 20 24-1.2 4.6-5.1 9.5-9.1 11.5-6.1 3.2-12.2 1.8-31.4-7-4.6-2.2-7.5-2.8-12.5-2.8s-7.9.6-12.5 2.8c-19.2 8.8-25.3 10.2-31.4 7-4-2-7.9-6.9-9.1-11.5-3-11 6.2-21.1 22-24.3 7.8-1.6 57.9-1.4 64 .3"
+            ></path>
+          </svg>
+          <div class="space-y-2">
+            <h3 class="title">Tratamento de Barba</h3>
+            <p>Tratamento completo para barba com produtos especiais e técnicas profissionais.</p>
+            <p class="title">R$ 49</p>
+          </div>
+        </li>
+      </ul>
+      <Link href="#booking" class="mx-auto">Agendar um Horário</Link>
+    </section>
+    <section
+      class="ui-px relative flex flex-col items-center justify-center gap-8 py-8 after:absolute after:inset-0 after:-z-10 after:bg-linear-to-l after:from-black/60 after:to-transparent after:to-80% md:py-16 xl:py-32"
+    >
+      <Image
+        class:list="absolute inset-0 object-left -z-10 aspect-519/205 size-full bg-linear-to-r from-transparent to-black object-cover"
+        src={banner_2}
+        alt="Serviço de barbeiro de luxo"
+      />
+      <h2 class="title-secondary text-center text-balance text-white text-shadow-lg/30 lg:w-2/3">
+        Experimente o luxo dos serviços de barbeiro concierge na sua casa
+      </h2>
+      <Link href="#booking">Agendar um Horário</Link>
+    </section>
+    <section class="ui-px space-y-16 text-center">
+      <header class="space-y-4">
+        <h2 class="title-secondary">Por que nos escolher</h2>
+        <p class="text-balance lg:mx-auto lg:w-2/3">
+          Nossa equipe é dedicada a oferecer o melhor serviço com qualidade, profissionalismo e
+          atenção aos detalhes que fazem toda a diferença.
+        </p>
+      </header>
+      <ul
+        class="flex flex-col gap-4 *:mx-auto *:w-7/10 *:basis-1/3 lg:w-auto lg:flex-row lg:gap-8 lg:*:max-w-[400px]"
+      >
+        <InfoListItem title="Licenciados">
+          <svg
+            slot="icon"
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 256 256"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+              d="M232 86.53V56a16 16 0 0 0-16-16H40a16 16 0 0 0-16 16v128a16 16 0 0 0 16 16h120v24a8 8 0 0 0 12 7l24-13.74L220 231a8 8 0 0 0 12-7v-62.53a51.88 51.88 0 0 0 0-74.94M128 144H72a8 8 0 0 1 0-16h56a8 8 0 0 1 0 16m0-32H72a8 8 0 0 1 0-16h56a8 8 0 0 1 0 16m88 98.21-16-9.16a8 8 0 0 0-7.94 0l-16 9.16V172a51.88 51.88 0 0 0 40 0ZM196 160a36 36 0 1 1 36-36 36 36 0 0 1-36 36"
+              stroke="none"></path></svg
+          >
+          <p>
+            Nossa equipe de barbeiros licenciados e segurados segue rigorosas diretrizes de limpeza
+            e saneamento para uma experiência segura e confortável.
+          </p>
+        </InfoListItem>
+        <InfoListItem title="Mestres">
+          <svg
+            slot="icon"
+            version="1.0"
+            xmlns="http://www.w3.org/2000/svg"
+            width="85.333"
+            height="85.333"
+            viewBox="0 0 64 64"
+            ><path
+              d="M26.2 6.2c-9 2-15.1 11.6-13.6 21.3.6 4.6 2.4 5.3 2.4.9 0-3.7 2.7-9.4 4.4-9.4.9 0 3 .9 4.8 2 4.5 2.7 11.9 2.7 17-.2s7-1.8 8.3 5c1.4 7 2.2 7.3 3 .9 1.3-10-4.6-18.3-14.5-20.6-5.2-1.2-6-1.2-11.8.1"
+            ></path><path
+              d="M15 40.1c0 9.4 1.4 11.5 10.5 16 7 3.4 7.4 3.4 15.9-1.2 7.7-4.2 8.8-6 8.4-15-.3-7.4-.8-7.2-2.4.8-.7 3.5-4.5 5.3-11.9 5.8-12 .8-18.5-2.1-18.5-8.4 0-1.4-.5-3.3-1-4.1-.7-1-1 .8-1 6.1"
+            ></path><path
+              d="M27.7 38.1c-1.1.6-3.3.8-5.3.5-3.8-.8-4.1-.1-1.8 3.2 1.7 2.5 8.1 3.1 10.2 1 1-1 1.7-1 3.2 0 4.8 2.9 12 .4 12-4.3 0-1.4-.3-1.5-1.5-.5-.9.8-2.7 1-4.7.6-6.9-1.5-10.4-1.6-12.1-.5"
+            ></path></svg
+          >
+          <p>
+            Nossos barbeiros são apaixonados por seu ofício e buscam proporcionar cortes de cabelo
+            de alta qualidade para cada cliente.
+          </p>
+        </InfoListItem>
+        <InfoListItem title="Reputação">
+          <svg slot="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"
+            ><path
+              d="M19.2 8.4 7.9 12.5 8.2 26c.3 11.6.7 14.1 2.6 17.7 3 5.7 8.4 10.8 14.9 13.9 4.8 2.4 5.8 2.6 9.2 1.6 6.4-2 14.4-8.4 17.6-14.4 2.8-5 3-6 3.3-18.8l.3-13.5-11.9-4.3c-6.6-2.3-12.4-4.1-12.9-4.1-.4.1-5.9 2-12.1 4.3m25.5 16.2c.2.5-3.5 4.7-8.2 9.4L28 42.5l-4.7-4.7c-3.7-3.8-4.5-5-3.5-6 .9-.9 2-.5 4.7 2.2l3.5 3.4 7.3-7.2c6.8-6.8 8.6-7.9 9.4-5.6"
+            ></path></svg
+          >
+          <p>
+            Temos uma forte reputação online com avaliação de 5 estrelas de mais de 100 mil clientes
+            satisfeitos.
+          </p>
+        </InfoListItem>
+      </ul>
+      <footer class="flex flex-col gap-4 *:basis-1/3 lg:flex-row">
+        <div class="space-y-2">
+          <Image
+            class="mx-auto aspect-square size-20 rounded-full object-cover"
+            src={profile}
+            alt="Foto de perfil do barbeiro"
+            width={200}
+            height={200}
+          />
+          <Stars score={5.0} />
+          <h2 class="title">O MELHOR SERVIÇO DE BARBEARIA</h2>
+          <p class="mx-auto max-w-xl text-pretty">
+            Nossa equipe é composta por profissionais experientes que transformam cada atendimento
+            em uma experiência única, com atenção aos detalhes e qualidade excepcional.
+          </p>
+          <p class="font-bold uppercase">SAM HOUSTON</p>
+        </div>
+        <ReviewBlock className="lg:order-first" title="Google" score={4.7} reviews={196}>
+          <GoogleIcon slot="icon" />
+        </ReviewBlock>
+        <ReviewBlock title="TripAdvisor" score={5.0} reviews={176}>
+          <svg
+            slot="icon"
+            viewBox="0 -96 512.2 512.2"
+            id="Layer_2"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#000"
+            ><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"
+              ><style>
+                .st0 {
+                  fill: #08808a;
+                }
+              </style><path
+                class="st0"
+                d="M128.2 127.9C92.7 127.9 64 156.6 64 192s28.7 64.1 64.1 64.1 64.1-28.7 64.1-64.1c.1-35.4-28.6-64.1-64-64.1m0 110c-25.3 0-45.9-20.5-45.9-45.9s20.5-45.9 45.9-45.9S174 166.7 174 192s-20.5 45.9-45.8 45.9"
+              ></path><circle class="st0" cx="128.4" cy="191.9" r="31.9"></circle><path
+                class="st0"
+                d="M384.2 127.9c-35.4 0-64.1 28.7-64.1 64.1s28.7 64.1 64.1 64.1 64.1-28.7 64.1-64.1-28.7-64.1-64.1-64.1m0 110c-25.3 0-45.9-20.5-45.9-45.9s20.5-45.9 45.9-45.9S430 166.7 430 192s-20.5 45.9-45.8 45.9"
+              ></path><circle class="st0" cx="384.4" cy="191.9" r="31.9"></circle><path
+                class="st0"
+                d="m474.4 101.2 37.7-37.4h-76.4C392.9 29 321.8 0 255.9 0c-66 0-136.5 29-179.3 63.8H0l37.7 37.4C14.4 124.4 0 156.5 0 192c0 70.8 57.4 128.2 128.2 128.2 32.5 0 62.2-12.1 84.8-32.1l43.4 31.9 42.9-31.2-.5-1.2c22.7 20.2 52.5 32.5 85.3 32.5 70.8 0 128.2-57.4 128.2-128.2-.1-35.4-14.6-67.5-37.9-90.7M368 64.8c-60.7 7.6-108.3 57.6-111.9 119.5-3.7-62-51.4-112.1-112.3-119.5 30.6-22 69.6-32.8 112.1-32.8S337.4 42.8 368 64.8M128.2 288.2C75 288.2 32 245.1 32 192s43.1-96.2 96.2-96.2 96.2 43.1 96.2 96.2c-.1 53.1-43.1 96.2-96.2 96.2m256 0c-53.1 0-96.2-43.1-96.2-96.2s43.1-96.2 96.2-96.2 96.2 43.1 96.2 96.2c-.1 53.1-43.1 96.2-96.2 96.2"
+              ></path></g
+            ></svg
+          >
+        </ReviewBlock>
+      </footer>
+    </section>
+    <section
+      id="booking"
+      class="ui-px relative mb-0! flex flex-col gap-16 py-32 *:basis-1/2 after:absolute after:inset-0 after:-z-10 after:bg-linear-to-r after:from-black/80 after:to-transparent after:to-80% lg:flex-row"
+    >
+      <Image
+        class="absolute inset-0 -z-10 size-full object-cover"
+        src={banner_3}
+        alt="Barbeiro atendendo cliente em casa"
+        width={1920}
+        height={1080}
+      />
+      <header class="my-auto space-y-8">
+        <h2 class="title-secondary text-white text-shadow-lg/30">Faça um agendamento</h2>
+        <p class="max-w-xl text-pretty text-white text-shadow-lg/20">
+          Entre em contato conosco para agendar seu horário. Oferecemos serviços personalizados no
+          conforto da sua casa com profissionais qualificados.
+        </p>
+        <div class="flex gap-8 [&_svg]:size-10">
+          <span class="aspect-square bg-white p-2">
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              ><path fill="none" d="M0 0h24v24H0z"></path><path
+                d="M20 15.5c-1.25 0-2.45-.2-3.57-.57a1.02 1.02 0 0 0-1.02.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1A11.36 11.36 0 0 1 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM19 12h2a9 9 0 0 0-9-9v2c3.87 0 7 3.13 7 7zm-4 0h2c0-2.76-2.24-5-5-5v2c1.66 0 3 1.34 3 3z"
+              ></path></svg
+            >
+          </span>
+          <div class="space-y-1 text-white *:text-shadow-lg/20">
+            <p class="title">Ligue para nós</p>
+            <p>11 99999-9999</p>
+          </div>
+        </div>
+        <div class="flex gap-8 [&_svg]:size-10">
+          <span class="aspect-square bg-white p-2">
+            <svg
+              stroke="currentColor"
+              fill="currentColor"
+              stroke-width="0"
+              viewBox="0 0 512 512"
+              xmlns="http://www.w3.org/2000/svg"
+              ><path
+                d="M437.332 80H74.668C51.199 80 32 99.198 32 122.667v266.666C32 412.802 51.199 432 74.668 432h362.664C460.801 432 480 412.802 480 389.333V122.667C480 99.198 460.801 80 437.332 80zM432 170.667L256 288 80 170.667V128l176 117.333L432 128v42.667z"
+              ></path></svg
+            >
+          </span>
+          <div class="space-y-1 text-white *:text-shadow-lg/20">
+            <p class="title">Envie um email</p>
+            <p>ola@exemplo.com</p>
+          </div>
+        </div>
+      </header>
+      <form class="card grid grid-cols-2 gap-4 lg:mx-auto lg:max-w-2xl lg:gap-8">
+        <label class="col-span-2 flex h-full flex-col gap-1">
+          <span class="title">Nome</span>
+          <Input name="name" autocomplete="name" />
+        </label>
+
+        <label class="col-span-2 flex flex-col gap-1">
+          <span class="title">Assunto</span>
+          <Input name="subject" autocomplete="organization-title" />
+        </label>
+
+        <label class="mt-auto flex flex-col gap-1">
+          <span class="title">Telefone</span>
+          <Input name="phone" autocomplete="tel" />
+        </label>
+
+        <label class="mt-auto flex flex-col gap-1">
+          <span class="title">Endereço de Email</span>
+          <Input name="email" autocomplete="email" />
+        </label>
+
+        <label class="col-span-2 flex flex-col gap-1">
+          <span class="title">Digite sua mensagem aqui...</span>
+          <Textarea name="message" autocomplete="off" class="h-40" />
+        </label>
+
+        <Button class="col-span-2 mx-auto">Agendar um Horário</Button>
+      </form>
+    </section>
+    <footer
+      class="ui-px flex flex-col gap-4 bg-black py-4 text-sm text-white lg:flex-row lg:items-center lg:justify-between lg:py-6"
+    >
+      <div
+        class="*:hover:bg-primary/30 flex justify-between gap-4 *:aspect-square *:p-3 *:transition-colors lg:justify-normal [&_svg]:size-4"
+      >
+        <a href="" rel="noopener noreferrer" target="_blank">
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            version="1.1"
+            viewBox="0 0 17 17"
+            xmlns="http://www.w3.org/2000/svg"
+            ><g></g><path
+              d="M12.461 5.57l-0.309 2.93h-2.342v8.5h-3.518v-8.5h-1.753v-2.93h1.753v-1.764c0-2.383 0.991-3.806 3.808-3.806h2.341v2.93h-1.465c-1.093 0-1.166 0.413-1.166 1.176v1.464h2.651z"
+            ></path></svg
+          >
+        </a>
+        <a href="" rel="noopener noreferrer" target="_blank">
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 16 16"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+              d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
+            ></path></svg
+          >
+        </a>
+        <a href="" rel="noopener noreferrer" target="_blank">
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 448 512"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+              d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+            ></path></svg
+          >
+        </a>
+        <a href="" rel="noopener noreferrer" target="_blank">
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 384 512"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+              d="M204 6.5C101.4 6.5 0 74.9 0 185.6 0 256 39.6 296 63.6 296c9.9 0 15.6-27.6 15.6-35.4 0-9.3-23.7-29.1-23.7-67.8 0-80.4 61.2-137.4 140.4-137.4 68.1 0 118.5 38.7 118.5 109.8 0 53.1-21.3 152.7-90.3 152.7-24.9 0-46.2-18-46.2-43.8 0-37.8 26.4-74.4 26.4-113.4 0-66.2-93.9-54.2-93.9 25.8 0 16.8 2.1 35.4 9.6 50.7-13.8 59.4-42 147.9-42 209.1 0 18.9 2.7 37.5 4.5 56.4 3.4 3.8 1.7 3.4 6.9 1.5 50.4-69 48.6-82.5 71.4-172.8 12.3 23.4 44.1 36 69.3 36 106.2 0 153.9-103.5 153.9-196.8C384 71.3 298.2 6.5 204 6.5z"
+            ></path></svg
+          >
+        </a>
+        <a href="" rel="noopener noreferrer" target="_blank">
+          <svg
+            stroke="currentColor"
+            fill="currentColor"
+            stroke-width="0"
+            viewBox="0 0 448 512"
+            xmlns="http://www.w3.org/2000/svg"
+            ><path
+              d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+            ></path></svg
+          >
+        </a>
+      </div>
+      <p class="text-center lg:order-first">
+        © Copyright 2022 barbearia - Todos os direitos reservados
+      </p>
+    </footer>
+  </main>
+</Layout>
+
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>('#dialog')
+  dialog?.showModal()
+</script>

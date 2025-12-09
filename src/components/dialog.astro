@@ -1,0 +1,14 @@
+---
+type Props = astroHTML.JSX.DialogHTMLAttributes
+
+const { class: className, ...rest } = Astro.props
+---
+
+<dialog
+  class:list={[
+    'card fixed top-1/2 z-100 mx-auto -translate-y-1/2 space-y-4 backdrop:backdrop-blur-xs',
+  ]}
+  {...rest}
+>
+  <slot />
+</dialog>

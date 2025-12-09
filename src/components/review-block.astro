@@ -1,0 +1,24 @@
+---
+import Stars from './stars.astro'
+
+interface Props {
+  title: string
+  score: number
+  reviews?: number
+  className?: string
+}
+
+const { title, className, score = 4, reviews = 0 } = Astro.props
+---
+
+<div class:list={['text-center', className]}>
+  <span class="[&_svg]:mx-auto [&_svg]:size-12">
+    <slot name="icon" />
+  </span>
+  <p class="title mt-1">
+    {title}
+  </p>
+  <p class="title-primary">{Number.isInteger(score) ? `${score}.0` : score}</p>
+  <Stars score={score} />
+  <p class="text-lg">{reviews} reviews</p>
+</div>

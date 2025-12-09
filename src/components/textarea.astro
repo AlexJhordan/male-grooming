@@ -1,0 +1,12 @@
+---
+type Props = astroHTML.JSX.TextareaHTMLAttributes
+
+const { class: className, ...rest } = Astro.props
+---
+
+<textarea
+  class:list={[
+    'focus:border-primary field-sizing-content resize-none border-b-4 border-black transition-colors outline-none',
+    className,
+  ]}
+  {...rest}></textarea>

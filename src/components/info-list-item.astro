@@ -1,0 +1,20 @@
+---
+interface Props {
+  title: string
+  className?: string
+}
+
+const { title, className } = Astro.props
+---
+
+<li class:list={['text-center [&_svg]:mx-auto [&_svg]:size-10', className]}>
+  <slot name="icon" />
+  <h3
+    class="title after:bg-primary relative mt-1 after:absolute after:top-full after:left-1/2 after:h-1 after:w-16 after:-translate-x-1/2"
+  >
+    {title}
+  </h3>
+  <div class="mx-auto mt-2 max-w-xl space-y-1 text-pretty">
+    <slot>Description</slot>
+  </div>
+</li>

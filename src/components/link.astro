@@ -1,0 +1,20 @@
+---
+interface Props extends astroHTML.JSX.AnchorHTMLAttributes {
+  variant?: 'primary' | 'secondary'
+}
+const { variant = 'primary', class: className, ...rest } = Astro.props
+---
+
+<a
+  class:list={[
+    'flex h-12 w-fit shrink-0 cursor-pointer items-center justify-center px-4 text-sm font-semibold uppercase shadow-md/50 ring-0 outline-0 transition-all hover:scale-103 focus:scale-103 focus:ring-3 focus:ring-black [&_svg]:size-4',
+    {
+      'bg-primary text-foreground': variant === 'primary',
+      'border-2 border-white text-white backdrop-blur-[2px]': variant === 'secondary',
+    },
+    className,
+  ]}
+  {...rest}
+>
+  <slot />
+</a>
