@@ -1,6 +1,6 @@
 # Landing Page – Astro + Tailwind
 
-![Prévia da Landing](./preview.png)
+[![Prévia da Landing](./preview.png)](https://male-grooming.netlify.app)
 
 Landing page simples, responsiva e focada no estudo do framework **Astro**.
 
@@ -21,7 +21,7 @@ Site em produção: **https://male-grooming.netlify.app**
 ## Como executar localmente
 
 ```bash
-git clone <url-do-repo>
-cd <pasta-do-repo>
+git clone https://github.com/AlexJhordan/male-grooming
+cd male-grooming
 bun install
 bun dev
