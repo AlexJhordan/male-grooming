@@ -2,9 +2,11 @@
 
 [![Prévia da Landing](./preview.png)](https://male-grooming.netlify.app)
 
-Landing page simples, responsiva e focada no estudo do framework **Astro**.
+Landing page simples e responsiva, foco em pratica praticar com o framework **Astro**.
 
-Site em produção: **https://male-grooming.netlify.app**
+Site hospedado aqui: **https://male-grooming.netlify.app**
+
+> 👋 Este é meu primeiro projeto feito exclusivamente com **Astro**. Já tinha feito outro usando Astro junto com outras tecnologias (React, SSR) e, apesar de ter gostado do resultado com as Islands, quis criar uma página simples usando apenas Astro para entender melhor como o framework funciona na prática, no que para mim, landing page é o seu melhor cenário.
 
 ## Tecnologias
 
