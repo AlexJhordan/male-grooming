@@ -22,7 +22,6 @@ Site hospedado aqui: **https://male-grooming.netlify.app**
 ## Requisitos
 
 - Bun >= 1.x  
-- Node >= 18
 
 ## Como executar localmente
 
