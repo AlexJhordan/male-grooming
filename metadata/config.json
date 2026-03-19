@@ -1,0 +1,14 @@
+{
+  "$schema": "https://raw.githubusercontent.com/byAlek/portfolio/refs/heads/main/config.schema.json",
+  "project_type": "landing-page",
+  "status": "completed",
+  "description": {
+    "en": "Landing page for a barber shop",
+    "es": "Página de destino para un salón de barbería",
+    "pt-br": "Página de destino para uma barbearia"
+  },
+  "technologies": {
+    "frontend": ["astro", "typescript", "tailwind" ]
+  },
+  "featured": true
+}
